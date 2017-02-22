@@ -1,0 +1,18 @@
+﻿ <div infinite-scroll="$ctrl.getNewPosts()" infinite-scroll-distance="1"   infinite-scroll-disabled="$ctrl.progress">
+    <div class="post-item" ng-repeat="info in $ctrl.data track by $index">
+        <div class="post-head">
+            <span></span>
+        </div>
+        <div class="post-img">
+            <img src="//startupers.blob.core.windows.net{{info.newsImage}}" />
+        </div>
+        <div class="post-title">
+            <span>{{info.title}}</span>
+        </div>
+        <div class="post-suumary">
+            <ul ng-repeat="sum in info.listSummary">
+                <li>{{sum}}</li>
+            </ul>
+        </div>
+    </div>
+</div> 

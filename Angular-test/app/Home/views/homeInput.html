@@ -1,0 +1,22 @@
+﻿<div class="input-block" >
+  <form novalidate name="inputForm" ng-submit="$ctrl.addUserInfo($ctrl.loginData, inputForm.$valid)">
+    <div class="input-left-inner-block input-inner-block">
+      <span class="form-name">Email</span>
+      <input type="email" name="email" value="" class="input-style" novalidate required ng-maxlength="10" ng-minlength="4" ng-model="$ctrl.loginData.login" />
+      <div class="error-message" ng-messages="inputForm.email.$error">
+        <span ng-message="required">Поле повинно бути заповненим</span>
+        <span ng-message="maxlength">Довжина імені не повинна перевищувати 10 символів</span>
+        <span ng-message="minlength">Довжина імені не повинна бути меншою за 4 символи</span>
+      </div>
+    </div>
+    <div class="input-right-inner-block input-inner-block">
+      <span class="form-name">Password</span>
+      <input type="password" name="password" value="" class="input-style" novalidate required ng-minlength="8" ng-model="$ctrl.loginData.password" />
+      <div class="error-message" ng-messages="inputForm.password.$error">
+        <span ng-message="required">Поле повинно бути заповненим</span>
+        <span ng-message="minlength">Довжина паролю не повинна бути меншою за 8 символи</span>
+      </div>
+    </div>
+    <div class="button-block"><button class="btn-style">SEND</button></div>
+  </form>
+</div>

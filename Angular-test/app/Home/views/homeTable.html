@@ -1,0 +1,15 @@
+﻿<table class="table" >
+  <thead>
+    <tr>
+      <td>Login</td>
+      <td>Password</td>
+    </tr>
+  </thead>
+  <tbody>
+    <tr ng-repeat="information in $ctrl.service.tableInfo">
+      <td>{{information.login}}</td>
+      <td>{{information.password}}</td>
+    </tr>
+  </tbody>
+</table>
+

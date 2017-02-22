@@ -1,0 +1,16 @@
+﻿<div class="navbar-top">
+    <div class="container">
+        <ul class="navbar-left-block">
+            <li ui-sref="home"><span class="button-menu">Home</span></li>
+            <li ui-sref="feed"><span class="button-menu">Feed</span></li>
+        </ul>
+        <div class="navbar-right-block">
+            <form ng-submit="$ctrl.userData">
+                <input class="login-input" type="text" placeholder="login" ng-model="$ctrl.userData.login" />
+                <input class="login-input" type="password" placeholder="password" ng-model="$ctrl.userData.password" />
+                <button type="submit" class="sub-btn">Submit</button>
+            </form>
+        </div>
+    </div>
+</div>
+
