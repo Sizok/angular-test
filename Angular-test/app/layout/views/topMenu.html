@@ -5,8 +5,8 @@
             <li ui-sref="feed"><span class="button-menu">Feed</span></li>
         </ul>
         <div class="navbar-right-block">
-            <form ng-submit="$ctrl.userData">
-                <input class="login-input" type="text" placeholder="login" ng-model="$ctrl.userData.login" />
+            <form ng-submit="$ctrl.loginNewUser($ctrl.userData)">
+                <input class="login-input" type="text" placeholder="login" ng-model="$ctrl.userData.username" />
                 <input class="login-input" type="password" placeholder="password" ng-model="$ctrl.userData.password" />
                 <button type="submit" class="sub-btn">Submit</button>
             </form>

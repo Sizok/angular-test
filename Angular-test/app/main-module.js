@@ -1,4 +1,4 @@
-﻿angular.module('app', ['ngMessages', 'ui.router', 'infinite-scroll', 'homeComp', 'homeCtrl', 'feedComp', 'feedService', 'test.home', 'test.feed', 'layoutComp'])
+﻿angular.module('app', ['ngMessages', 'ui.router', 'infinite-scroll', 'homeComp', 'homeCtrl', 'feedComp', 'feedService', 'test.home', 'test.feed', 'layoutComp', 'menuService'])
     .config(['$locationProvider', '$urlRouterProvider', '$httpProvider', function ($locationProvider, $urlRouterProvider, $httpProvider) {
 
     $locationProvider.html5Mode({
