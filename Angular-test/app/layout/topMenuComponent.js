@@ -1,5 +1,5 @@
 ﻿(function () {
-    function menuCtrl(topMenuService) {
+    function menuCtrl(topMenuService, $http, $rootScope) {
         ctrl = this;
 
         ctrl.loginService = topMenuService;
@@ -9,15 +9,19 @@
         };
 
         ctrl.loginNewUser = function () {
-            debugger;
             ctrl.loginService.loginUser(ctrl.userData);
         }
         
-        
+        ctrl.rootScope = $rootScope;
+
+        //ctrl.userInfoData = topMenuService.userDataInfo;
+
+        //if (ctrl.userInfoData != null)
+        //    console.log(ctrl.userInfoData + 'ctrl data');
 
     };
 
-    menuCtrl.$inject = ['topMenuService', '$http'];
+    menuCtrl.$inject = ['topMenuService', '$http', '$rootScope'];
 
     angular.module('layoutComp', [])
         .component('topMenu', {

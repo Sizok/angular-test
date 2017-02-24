@@ -164,6 +164,8 @@
     <Content Include="app\layout\topMenuComponent.js" />
     <Content Include="app\layout\topMenuService.js" />
     <Content Include="app\layout\views\topMenu.html" />
+    <Content Include="app\Services\angular-local-storage.js" />
+    <Content Include="app\Services\angular-local-storage.min.js" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\sass\main.css">

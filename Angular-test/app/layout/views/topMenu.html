@@ -4,7 +4,7 @@
             <li ui-sref="home"><span class="button-menu">Home</span></li>
             <li ui-sref="feed"><span class="button-menu">Feed</span></li>
         </ul>
-        <div class="navbar-right-block">
+        <div class="navbar-right-block" ng-if="!$ctrl.rootScope.isAut">
             <form ng-submit="$ctrl.loginNewUser($ctrl.userData)">
                 <input class="login-input" type="text" placeholder="login" ng-model="$ctrl.userData.username" />
                 <input class="login-input" type="password" placeholder="password" ng-model="$ctrl.userData.password" />

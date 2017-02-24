@@ -27,7 +27,8 @@ namespace Angular_test
                       "~/Scripts/angular.js",
                       "~/Scripts/angular-messages.js",
                       "~/Scripts/angular-ui-router.js",
-                      "~/Scripts/ng-infinite-scroll.js"));
+                      "~/Scripts/ng-infinite-scroll.js",
+                      "~/app/Services/angular-local-storage.js"));
 
             bundles.Add(new ScriptBundle("~/bundles/angular-comp").Include(
                       "~/app/main-module.js",
