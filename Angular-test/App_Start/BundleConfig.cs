@@ -28,7 +28,9 @@ namespace Angular_test
                       "~/Scripts/angular-messages.js",
                       "~/Scripts/angular-ui-router.js",
                       "~/Scripts/ng-infinite-scroll.js",
-                      "~/app/Services/angular-local-storage.js"));
+                      "~/app/Services/angular-local-storage.js",
+                      "~/Scripts/angular-ui/ui-bootstrap.js",
+                      "~/Scripts/angular-ui/ui-bootstrap-tpls.js"));
 
             bundles.Add(new ScriptBundle("~/bundles/angular-comp").Include(
                       "~/app/main-module.js",
@@ -40,7 +42,14 @@ namespace Angular_test
                       "~/app/Feed/feedService.js",
                       "~/app/Feed/feedComponent.js",
                       "~/app/layout/topMenuComponent.js",
-                      "~/app/layout/topMenuService.js"));
+                      "~/app/layout/topMenuService.js",
+                      "~/app/Feed/modalComponent.js",
+                      "~/app/Feed/modalService.js",
+                      "~/app/Feed/addPostComponent.js",
+                      "~/app/Feed/addPostService.js",
+                      "~/app/profile/profile.js",
+                      "~/app/profile/profileComp.js",
+                      "~/app/profile/profileService.js"));
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",

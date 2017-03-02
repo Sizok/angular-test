@@ -2,7 +2,7 @@
   font-family: sans-serif;
   font-size: 14px; }
 
-.body-content {
+.post-body {
   padding-top: 80px; }
 
 .out-form-block {
@@ -52,7 +52,7 @@
     max-height: 500px; }
 
 .post-title {
-  font-size: 24px;
+  font-size: 20px;
   font-weight: bold;
   margin-top: 25px; }
 
@@ -123,4 +123,100 @@
   border: 1px solid #000;
   border-radius: 5px;
   padding: 10px; }
+
+.user-avatar {
+  width: 45px;
+  height: 45px;
+  display: inline-block; }
+  .user-avatar a {
+    display: block;
+    position: relative; }
+    .user-avatar a img {
+      width: 100%;
+      height: auto;
+      border-radius: 50%; }
+
+.dropdown-menu {
+  left: auto;
+  top: 75px; }
+  .dropdown-menu li span {
+    padding: 0 10px; }
+    .dropdown-menu li span:hover {
+      cursor: pointer; }
+
+.heshtags-list {
+  list-style: none;
+  padding: 0; }
+  .heshtags-list li {
+    color: #7f7f7f; }
+
+.modal-window {
+  background: #fff;
+  padding: 25px; }
+
+.close-btn {
+  float: right;
+  font-weight: bold; }
+  .close-btn:hover {
+    cursor: pointer; }
+
+.input-block-style {
+  padding: 10px; }
+  .input-block-style span {
+    display: block;
+    font-weight: bold; }
+  .input-block-style .input-style {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #7f7f7f; }
+
+.add-post-btn {
+  margin: 15px auto;
+  display: block; }
+
+.profile-bcg-img-block {
+  width: 100%;
+  height: 445px; }
+  .profile-bcg-img-block img {
+    width: 100%;
+    height: auto; }
+
+.profile-content-block {
+  width: 100%;
+  position: relative;
+  height: 450px;
+  bottom: 100px; }
+  .profile-content-block .img-avatar {
+    width: 150px;
+    height: 150px;
+    margin: 0 auto;
+    border-radius: 50%;
+    border: 5px solid #fff;
+    position: relative; }
+    .profile-content-block .img-avatar img {
+      border-radius: 50%;
+      width: 100%;
+      height: auto; }
+    .profile-content-block .img-avatar span {
+      text-align: center;
+      color: #fff;
+      display: block;
+      width: 36px;
+      height: 36px;
+      background-color: rgba(0, 0, 0, 0.6);
+      border-radius: 50%;
+      line-height: 2.5em;
+      position: absolute;
+      bottom: 0;
+      right: 0; }
+  .profile-content-block .profile-user-name {
+    text-align: center;
+    padding: 25px;
+    font-weight: bold;
+    font-size: 18px; }
+  .profile-content-block .user-info-block {
+    text-align: center; }
+    .profile-content-block .user-info-block span, .profile-content-block .user-info-block a {
+      display: block;
+      margin: 15px auto; }
 

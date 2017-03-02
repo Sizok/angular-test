@@ -1,11 +1,48 @@
 ﻿<div class="post-body">
-    <feed-top-menu></feed-top-menu>
-    <div class="row">
-        <div class="col-md-3">
-            <feed-menu></feed-menu>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-offset-3 col-md-6">
+                <div class="top-menu-block">
+                    <button ui-sref="feed({lastOrHot: null })" class="top-button">Trending</button>
+                    <button ui-sref="feed({lastOrHot: 'last' })" div class="top-button">New</button>
+                    <button ui-sref="feed({lastOrHot: 'hot' })" div class="top-button">Weekly best</button>
+                </div>
+            </div>
         </div>
-        <div class="col-md-6">
-            <feed-post></feed-post>
+        <div class="row">
+            <div class="col-md-3">
+                <div class="left-button-group">
+                    <span class="left-button-title">Filter by category</span>
+                    <a ui-sref="feed()" class="left-button">Lessons & Advice</a>
+                    <a ui-sref="feed({ hashtag: 'Motivation' })" class="left-button">Motivation</a>
+                    <a ui-sref="feed({ hashtag: 'News' })" class="left-button">News</a>
+                    <a ui-sref="feed()" class="left-button">Q & A</a>
+                    <a ui-sref="feed({ hashtag: 'My startup' })" class="left-button">My startup</a>
+                    <a ui-sref="feed()" class="left-button">Other</a>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div infinite-scroll="$ctrl.getNewPosts()" infinite-scroll-distance="1" infinite-scroll-disabled="$ctrl.progress">
+                    <div class="post-item" ng-repeat="info in $ctrl.posts track by $index" ng-click="$ctrl.openComponentModal(info)">
+                        <div class="post-head">
+                            <ul class="heshtags-list" ng-repeat="hash in info.hashtags">
+                                <li>{{hash}}</li>
+                            </ul>
+                        </div>
+                        <div class="post-img">
+                            <img src="//startupers.blob.core.windows.net{{info.newsImage}}" />
+                        </div>
+                        <div class="post-title">
+                            <span>{{info.title}}</span>
+                        </div>
+                        <div class="post-suumary">
+                            <ul ng-repeat="sum in info.listSummary">
+                                <li>{{sum}}</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </div>

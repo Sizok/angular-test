@@ -1,8 +1,9 @@
 ﻿(function () {
-    function menuCtrl(topMenuService, $http, $rootScope) {
-        ctrl = this;
+    function menuCtrl(topMenuService, $http, $rootScope, localStorageService, $uibModal) {
+        var ctrl = this;
 
         ctrl.loginService = topMenuService;
+        ctrl.currentUser = localStorageService.get('currentUser');
 
         ctrl.userData = {
             grant_type: 'password'
@@ -14,14 +15,19 @@
         
         ctrl.rootScope = $rootScope;
 
-        //ctrl.userInfoData = topMenuService.userDataInfo;
+        ctrl.logOut = function () {
+            ctrl.loginService.logOut();
+        }
 
-        //if (ctrl.userInfoData != null)
-        //    console.log(ctrl.userInfoData + 'ctrl data');
-
+        ctrl.openComponentModal = function () {
+            var modalInstance = $uibModal.open({
+                animation: true,
+                component: 'addPostComp',
+            });
+        };
     };
 
-    menuCtrl.$inject = ['topMenuService', '$http', '$rootScope'];
+    menuCtrl.$inject = ['topMenuService', '$http', '$rootScope', 'localStorageService', '$uibModal'];
 
     angular.module('layoutComp', [])
         .component('topMenu', {

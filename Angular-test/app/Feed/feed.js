@@ -2,15 +2,16 @@
     angular.module('test.feed', [])
         .config(['$stateProvider', function ($stateProvider) {
             $stateProvider.state('feed', {
-                url: '/feed',
-                template: '<feed-page data = $resolve.data></feed-page>',
+                url: '/feeds?hashtag&lastOrHot',
+                template: '<feed-page posts="$resolve.feeds"></feed-page>',
                 data: {
-                    pageTitle: 'Test'
+                    pageTitle: 'Feeds'
                 },
                 resolve: {
-                    data: ['getPostService', function (getPostService) {
-                        return getPostService.getPost(0);
-                    }]
+                    feeds: ['getPostService', '$stateParams', function (getPostService, $stateParams) {
+                        var test = getPostService.getPost($stateParams, 0);
+                        return test;
+                    }],
                 }
             });
         }])

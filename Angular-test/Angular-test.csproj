@@ -155,15 +155,23 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="app\Feed\addPostComponent.js" />
+    <Content Include="app\Feed\addPostService.js" />
     <Content Include="app\Feed\feed.js" />
-    <Content Include="app\Feed\views\feedMenu.html" />
+    <Content Include="app\Feed\modalComponent.js" />
+    <Content Include="app\Feed\modalService.js" />
+    <Content Include="app\Feed\views\addNewPostModal.html" />
     <Content Include="app\Feed\views\feedPage.html" />
-    <Content Include="app\Feed\views\feedTopMenu.html" />
+    <Content Include="app\Feed\views\postModal.html" />
     <Content Include="app\Home\home.js" />
     <Content Include="app\Home\views\homePage.html" />
     <Content Include="app\layout\topMenuComponent.js" />
     <Content Include="app\layout\topMenuService.js" />
     <Content Include="app\layout\views\topMenu.html" />
+    <Content Include="app\profile\profile.js" />
+    <Content Include="app\profile\profileComp.js" />
+    <Content Include="app\profile\profileService.js" />
+    <Content Include="app\profile\views\profile.html" />
     <Content Include="app\Services\angular-local-storage.js" />
     <Content Include="app\Services\angular-local-storage.min.js" />
     <Content Include="Content\bootstrap.css" />
@@ -174,6 +182,7 @@
     <Content Include="Content\sass\main.min.css">
       <DependentUpon>main.css</DependentUpon>
     </Content>
+    <Content Include="Content\ui-bootstrap-csp.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -185,6 +194,10 @@
     <Content Include="Scripts\angular-mocks.js" />
     <Content Include="Scripts\angular-ui-router.js" />
     <Content Include="Scripts\angular-ui-router.min.js" />
+    <Content Include="Scripts\angular-ui\ui-bootstrap-tpls.js" />
+    <Content Include="Scripts\angular-ui\ui-bootstrap-tpls.min.js" />
+    <Content Include="Scripts\angular-ui\ui-bootstrap.js" />
+    <Content Include="Scripts\angular-ui\ui-bootstrap.min.js" />
     <Content Include="Scripts\angular.js" />
     <Content Include="Scripts\angular.min.js" />
     <Content Include="Scripts\bootstrap.js" />
@@ -217,7 +230,6 @@
     <Content Include="app\Home\homeController.js" />
     <Content Include="app\Feed\feedComponent.js" />
     <Content Include="app\Feed\feedService.js" />
-    <Content Include="app\Feed\views\feedPost.html" />
     <Content Include="app\main-module.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="Scripts\ng-infinite-scroll.js" />

@@ -1,4 +1,21 @@
-﻿angular.module('app', ['ngMessages', 'ui.router', 'infinite-scroll', 'LocalStorageModule', 'homeComp', 'homeCtrl', 'feedComp', 'feedService', 'test.home', 'test.feed', 'layoutComp', 'menuService'])
+﻿angular.module('app', ['ngMessages',
+    'ui.router',
+    'infinite-scroll',
+    'LocalStorageModule',
+    'ui.bootstrap',
+    'homeComp',
+    'homeCtrl',
+    'feedComp',
+    'feedService',
+    'test.home',
+    'test.feed',
+    'layoutComp',
+    'menuService',
+    'postModal',
+    'addPost',
+    'profile',
+    'profileModule',
+    'profileModuleComp'])
     .config(['$locationProvider', '$urlRouterProvider', '$httpProvider', function ($locationProvider, $urlRouterProvider, $httpProvider) {
 
         $locationProvider.html5Mode({
@@ -12,10 +29,11 @@
     }])
     .run(['$http', 'localStorageService', 'topMenuService', '$rootScope', function ($http, localStorageService, topMenuService, $rootScope) {
 
-        var userInfo = localStorageService.get('userData');
-        console.log(userInfo);
-        var localUserInfo = localStorageService.get('infoCurrentUser');
-        console.log(localUserInfo);
-        $rootScope.isAut = false;
+        var currentUser = localStorageService.get('currentUser');
+        angular.extend(topMenuService, currentUser);
+        if (currentUser && new Date(currentUser.expires) > new Date()) {
+            $http.defaults.headers.common.Authorization = currentUser.token;
+        }
+
+        $rootScope.isAuthenticated = topMenuService.isAuthenticated();
     }])
-   

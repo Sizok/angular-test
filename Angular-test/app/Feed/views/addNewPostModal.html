@@ -1,0 +1,33 @@
+﻿<div class="modal-body-content">
+    <div class="add-post-title">
+        <span class="close-btn" ng-click="$ctrl.cancel()">Close</span>
+        <span>Add new post</span>
+    </div>
+    <form ng-submit="$ctrl.addNewPost($ctrl.newPostData)">
+        <div class="input-block-style">
+            <span class="input-title">Post title</span>
+            <input type="text" value="" class="input-style" ng-model="$ctrl.newPostData.title" />
+        </div>
+        <div class="input-block-style">
+            <span class="input-title">Image URL</span>
+            <input type="text" value="" class="input-style" ng-model="$ctrl.newPostData.image" />
+        </div>
+        <div class="input-block-style">
+            <span class="input-title">Post text</span>
+            <input type="text" value="" class="input-style" ng-model="$ctrl.newPostData.text" />
+        </div>
+        <div class="input-block-style">
+            <span class="input-title">links</span>
+            <input type="text" value="" class="input-style" ng-model="$ctrl.newPostData.link" />
+        </div>
+        <div class="input-block-style">
+            <span class="input-title">Hashtegs</span>
+            <input type="text" value="" class="input-style" ng-model="$ctrl.newPostData.hashtags" />
+        </div>
+        <div class="input-block-style">
+            <span class="input-title">View nickname author</span>
+            <input type="checkbox" value="" class="input-style-checkbox" ng-model="$ctrl.newPostData.nickname" />
+        </div>
+        <button class="sub-btn add-post-btn" type="submit">Add new post</button>
+    </form>
+</div>

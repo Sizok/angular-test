@@ -6,96 +6,50 @@
 
         var loginData = {};
 
-        //factory.loginUser = function (user) {
-        //    $http.post('https://startupers.us/oauth/token', $.param(user))
-        //    .then(function (user) {
-        //        factory.userNewData = user;
 
-        //        console.log(factory.userNewData);
-        //        var currentUser = {};
-                
-                    
-                
-        //        currentUser.token = factory.userNewData.data.token_type + ' ' + factory.userNewData.data.access_token;
-
-        //        localStorageService.set('currentUser', currentUser);
-
-        //        $http.get('https://startupers.us/api/v1/user',
-        //            {
-        //                headers: {
-        //                    'Authorization': currentUser.token
-        //                }
-        //            })
-        //        .then(function (user) {
-        //            var infoCurrentUser = user;
-        //            localStorageService.set('infoCurrentUser', infoCurrentUser)
-        //            factory.loginData = user;
-        //        });
-        //    })
-
-        //}
-
-
-        
+        factory.isAuthenticated = function () {
+            if (factory.token && new Date(factory.expires) > new Date()) {
+                return true;
+            } else {
+                return false;
+            }
+        };
+               
         
         factory.loginUser = function (user) {
-            var currentUserToken = localStorageService.get('userData');
-
-            debugger;
-            if (currentUserToken == null || currentUserToken['.expires'] < new Date()) {
-
-                debugger;
-                $http.post('https://startupers.us/oauth/token', $.param(user)).then(function (user) {
-
+            $http.post('https://startupers.us/oauth/token', $.param(user))
+                .then(function (user) {
                     factory.userData = user;
-                    localStorageService.set('userData', factory.userData)
-
-                    console.log(factory.userData)
-
                     var currentUser = {};
-
-                    $rootScope.isAut = true;
+                    if (user && user.data['.expires'])
+                        currentUser.expires = new Date(user.data['.expires']);
 
                     currentUser.token = factory.userData.data.token_type + ' ' + factory.userData.data.access_token;
 
+                    localStorageService.set('currentUser', currentUser)
+
+                    $http.defaults.headers.common.Authorization = currentUser.token;
                     $http.get('https://startupers.us/api/v1/user',
                         {
-                            headers: {
-                                'Authorization': currentUser.token
-                            }
+
                         })
-                    .then(function (user) {
-                        var infoCurrentUser = user;
-                        localStorageService.set('infoCurrentUser', infoCurrentUser)
-                        factory.userDataInfo = user;
-                        console.log(factory.userDataInfo)
-                    });
+                            .then(function (user) {
+                                currentUser.data = user.data;
+                                localStorageService.set('currentUser', currentUser)
+                                factory.loginData = user;
+                                $rootScope.isAuthenticated = true;
+                                factory.isAuthenticated();
+                            });
                 });
-            }
-            else {
-                var currentUser = {};
-                debugger;
-
-                currentUser.token = currentUserToken.data.token_type + ' ' + currentUserToken.data.access_token;
-                console.log(currentUser.token);
-                $rootScope.isAut = true;
-
-                $http.get('https://startupers.us/api/v1/user',
-                       {
-                           headers: {
-                               'Authorization': currentUser.token
-                           }
-                       })
-                   .then(function (user) {
-                       debugger;
-                       var infoCurrentUser = user;
-                       localStorageService.set('infoCurrentUser', infoCurrentUser)
-                       factory.userDataInfo = user;
-                       console.log(factory.userDataInfo)
-                   });
-            }
+        };
+            
+        factory.logOut = function () {
+            localStorageService.remove('currentUser');
+            delete $http.defaults.headers.common.Authorization;
+            delete topMenuService.token;
+            $rootScope.isAuthenticated = false;
+            factory.isAuthenticated();
         }
-
        
         return factory;
     }
