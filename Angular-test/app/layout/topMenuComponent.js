@@ -4,7 +4,9 @@
 
         ctrl.loginService = topMenuService;
         ctrl.currentUser = localStorageService.get('currentUser');
-
+        ctrl.url = {
+            imgUrl: 'http://startupers.blob.core.windows.net'
+        };
         ctrl.userData = {
             grant_type: 'password'
         };

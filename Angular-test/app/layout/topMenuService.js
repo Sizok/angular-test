@@ -31,7 +31,6 @@
                     $http.defaults.headers.common.Authorization = currentUser.token;
                     $http.get('https://startupers.us/api/v1/user',
                         {
-
                         })
                             .then(function (user) {
                                 currentUser.data = user.data;

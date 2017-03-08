@@ -6,8 +6,8 @@
         }
         ctrl.currentUser = {};
         ctrl.profileService = profileService;
-        debugger;
         ctrl.currentUser = localStorageService.get('currentUser');
+        debugger;
         ctrl.currentUser = ctrl.currentUser.data;
     };
 

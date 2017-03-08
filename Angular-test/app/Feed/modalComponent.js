@@ -3,14 +3,16 @@
         var ctrl = this;
 
         var postModalService = postModalService;
-
+        ctrl.url = {
+            imgUrl: 'http://startupers.blob.core.windows.net'
+        };
         ctrl.currentPostData = {};
         ctrl.$onInit = function () {
             ctrl.currentPostData = ctrl.resolve.post;
         };
         
         
-        ctrl.cancel = function () {
+        ctrl.close = function () {
             ctrl.dismiss({ $value: 'cancel' });
         };
     }

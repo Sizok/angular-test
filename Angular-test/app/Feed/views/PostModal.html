@@ -1,12 +1,12 @@
 ﻿<div class="modal-window">
-    <div ng-click="$ctrl.cancel()" class="close-btn">close post</div>
+    <div ng-click="$ctrl.close()" class="close-btn">close post</div>
     <div class="post-head">
         <ul class="heshtags-list" ng-repeat="hash in $ctrl.currentPostData.hashtags">
             <li>{{hash}}</li>
         </ul>
     </div>
     <div class="post-img">
-        <img src="//startupers.blob.core.windows.net{{$ctrl.currentPostData.newsImage}}" />
+        <img src="{{$ctrl.url.imgUrl + $ctrl.currentPostData.newsImage}}" />
     </div>
     <div class="post-title">
         <span>{{$ctrl.currentPostData.title}}</span>
